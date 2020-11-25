@@ -1,4 +1,6 @@
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
+
 import { LogoProps } from '.';
 
 const wrapperModifiers = {
@@ -28,16 +30,20 @@ const wrapperModifiers = {
     }
   `,
 
-  hideOnMobile: () => css`
-    ${LogoWrapper} {
-      width: 4.5rem;
+  hiddenOnMobile: () => css`
+    ${media.lessThan('medium')`
       height: 4.5rem;
-    }
 
-    ${LogoText} {
-      display: none;
-      pointer-events: none;
-    }
+      ${LogoWrapper} {
+        width: 4.5rem;
+        height: 4.5rem;
+      }
+
+      ${LogoText} {
+        display: none;
+        pointer-events: none;
+      }
+    `}
   `,
 };
 
@@ -48,9 +54,9 @@ export const Wrapper = styled.div<LogoProps>`
     position: relative;
     color: ${theme.colors[color!]};
 
-    ${!!size && wrapperModifiers[size]};
+    ${!!size && wrapperModifiers[size]}
 
-    ${!!hiddenOnMobile && wrapperModifiers.hideOnMobile};
+    ${!!hiddenOnMobile && wrapperModifiers.hiddenOnMobile}
   `}
 `;
 
