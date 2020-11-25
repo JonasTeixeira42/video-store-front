@@ -6,7 +6,7 @@ import Button from '.';
 
 describe('<Button />', () => {
   it('should render the button with large size', () => {
-    renderWithTheme(<Button>Movies</Button>);
+    const { container } = renderWithTheme(<Button>Movies</Button>);
 
     const button = screen.getByRole('button', { name: /movies/i });
 
@@ -19,6 +19,8 @@ describe('<Button />', () => {
     expect(button).toHaveStyle({
       color: '#FAFAFA',
     });
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render small size when size passed', () => {
