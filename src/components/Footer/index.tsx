@@ -17,7 +17,7 @@ const Footer = () => {
             Contact
           </Heading>
 
-          <a href="mailto:sac@wongames.com">sac@soitic.com</a>
+          <a href="mailto:sac@soitic.com">sac@soitic.com</a>
         </S.Column>
 
         <S.Column>
