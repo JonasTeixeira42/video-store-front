@@ -7,7 +7,7 @@ type ButtonType = ButtonHTMLAttributes<HTMLButtonElement>;
 export type BackgroundColors = 'white' | 'primary' | 'secondary';
 
 export type ButtonProps = {
-  size: 'small' | 'large';
+  size?: 'small' | 'large';
   color?: 'white' | 'lightBlack';
   background?: BackgroundColors;
   icon?: JSX.Element;
@@ -30,7 +30,7 @@ const Button = ({
       background={background}
       {...props}
     >
-      {!!children && <p>Adicionar Prato</p>}
+      {!!children && <p>{children}</p>}
 
       {!!icon && <div>{icon}</div>}
     </S.Wrapper>

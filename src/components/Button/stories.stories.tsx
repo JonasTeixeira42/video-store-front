@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart';
+import { AddBox } from '@styled-icons/material-outlined/';
 
 import Button, { ButtonProps } from '.';
 
@@ -20,12 +20,12 @@ export const Default: Story<ButtonProps> = (args) => <Button {...args} />;
 
 Default.args = {
   children: 'Add Movies',
-  icon: <AddShoppingCart size={24} />,
+  icon: <AddBox size={24} />,
 };
 
 export const WithIcon: Story<ButtonProps> = (args) => <Button {...args} />;
 
 WithIcon.args = {
   size: 'small',
-  icon: <AddShoppingCart size={24} />,
+  icon: <AddBox size={24} />,
 };
