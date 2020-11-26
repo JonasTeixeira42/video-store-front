@@ -39,6 +39,7 @@ export const Wrapper = styled.button<WrapperProps>`
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 
     font-weight: 600;
     font-size: ${theme.font.sizes.medium};

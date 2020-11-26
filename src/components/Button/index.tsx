@@ -10,7 +10,7 @@ export type ButtonProps = {
   size?: 'small' | 'large';
   color?: 'white' | 'lightBlack';
   background?: BackgroundColors;
-  icon?: JSX.Element;
+  icon?: React.ReactNode;
 } & ButtonType;
 
 const Button = ({
