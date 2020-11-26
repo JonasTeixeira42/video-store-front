@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> should render the form 1`] = `
+.c6 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.6rem;
+  border-radius: 0.8rem;
+  border: 0;
+  outline: 0;
+  background: #04d361;
+  color: #FAFAFA;
+  cursor: pointer;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  background: #03a14a;
+}
+
+.c5:hover {
+  background: #03a14a;
+}
+
+.c5 div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1.6rem;
+  background: #04d361;
+  border-radius: 0 0.8rem 0.8rem 0;
+  margin: 0 auto;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+
+.c5 p {
+  padding: 1.6rem;
+}
+
+.c5:hover {
+  background: #026f33;
+}
+
+.c5:hover > div {
+  background: #03a14a;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #EAEAEA;
+  border-radius: 0.2rem;
+  padding: 0 1.6rem;
+  border: 0.2rem solid;
+  border-color: #EAEAEA;
+}
+
+.c2:focus-within {
+  box-shadow: 0 0 0.5rem #F231A5;
+}
+
+.c3 {
+  color: #030517;
+  font-family: Poppins,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+  font-size: 1.6rem;
+  padding: 0.8rem;
+  background: transparent;
+  border: 0;
+  outline: none;
+  width: 100%;
+}
+
+.c1 {
+  font-size: 1.4rem;
+  color: #030517;
+  cursor: pointer;
+}
+
+.c0 .{
+  margin: 0.8rem 0;
+}
+
+.c0 .c4 {
+  margin-left: auto;
+  margin-top: 3.2rem;
+}
+
+<body>
+  <div>
+    <div
+      class="c0"
+    >
+      <form
+        class=""
+      >
+        <div
+          class=""
+        >
+          <label
+            class="c1"
+            for="Email"
+          >
+            Email
+          </label>
+          <div
+            class="c2"
+          >
+            <input
+              class="c3"
+              placeholder="Email"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=""
+        >
+          <label
+            class="c1"
+            for="Password"
+          >
+            Password
+          </label>
+          <div
+            class="c2"
+          >
+            <input
+              class="c3"
+              placeholder="Password"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <button
+          class="c4 c5"
+          color="white"
+          type="submit"
+        >
+          <p>
+            Cadastrar
+          </p>
+          <div>
+            <svg
+              aria-hidden="true"
+              class="c6"
+              fill="currentColor"
+              focusable="false"
+              height="24"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-8-2h2v-4h4v-2h-4V7h-2v4H7v2h4z"
+              />
+            </svg>
+          </div>
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+`;
