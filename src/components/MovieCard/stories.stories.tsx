@@ -10,6 +10,11 @@ export default {
   args: {
     movie,
   },
+  parameters: {
+    backgrounds: {
+      default: 'won-dark',
+    },
+  },
 } as Meta;
 
 export const Default: Story<MovieCardProps> = (args) => <MovieCard {...args} />;

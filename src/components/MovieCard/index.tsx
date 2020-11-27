@@ -9,8 +9,8 @@ import * as S from './styles';
 
 export type MovieCardProps = {
   movie: Movie;
-  onEdit: (movie: Movie) => void;
-  onDelete: (id: string) => void;
+  onEdit?: (movie: Movie) => void;
+  onDelete?: (id: string) => void;
 };
 
 const MovieCard = ({ movie, onEdit, onDelete }: MovieCardProps) => {
@@ -31,8 +31,13 @@ const MovieCard = ({ movie, onEdit, onDelete }: MovieCardProps) => {
             size="xsmall"
             background="primary"
             icon={<Delete size={20} />}
+            onClick={() => onDelete!(movie.id)}
           />
-          <Button size="xsmall" icon={<Edit size={20} />} />
+          <Button
+            size="xsmall"
+            icon={<Edit size={20} />}
+            onClick={() => onEdit!(movie)}
+          />
         </S.OperationBox>
       </S.Content>
     </S.Wrapper>

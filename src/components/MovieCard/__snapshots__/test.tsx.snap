@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovieCard /> should render the heading 1`] = `
+.c8 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.6rem;
+  border-radius: 0.8rem;
+  border: 0;
+  outline: 0;
+  background: #F231A5;
+  color: #FAFAFA;
+  cursor: pointer;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  background: #e20e8d;
+}
+
+.c7:hover {
+  background: #e20e8d;
+}
+
+.c7 div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1.6rem;
+  background: #F231A5;
+  border-radius: 0 0.8rem 0.8rem 0;
+  margin: 0 auto;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+
+.c7:hover {
+  background: #b20b6f;
+}
+
+.c7:hover > div {
+  background: #e20e8d;
+}
+
+.c7 div {
+  border-radius: 0.8rem;
+}
+
+.c7 p,
+.c7 > div {
+  padding: 0.8rem;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.6rem;
+  border-radius: 0.8rem;
+  border: 0;
+  outline: 0;
+  background: #04d361;
+  color: #FAFAFA;
+  cursor: pointer;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  background: #03a14a;
+}
+
+.c9:hover {
+  background: #03a14a;
+}
+
+.c9 div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1.6rem;
+  background: #04d361;
+  border-radius: 0 0.8rem 0.8rem 0;
+  margin: 0 auto;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+
+.c9:hover {
+  background: #026f33;
+}
+
+.c9:hover > div {
+  background: #03a14a;
+}
+
+.c9 div {
+  border-radius: 0.8rem;
+}
+
+.c9 p,
+.c9 > div {
+  padding: 0.8rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  max-width: 30rem;
+  height: 100%;
+  background-color: #FAFAFA;
+}
+
+.c1 {
+  height: 14rem;
+  width: 100%;
+  background: #f6f7f8;
+  background-image: linear-gradient( to right,#f6f7f8 0%,#edeef1 20%,#f6f7f8 40%,#f6f7f8 100% );
+  background-size: 80rem 14rem;
+  -webkit-animation: placeholderShimmer 1s linear infinite forwards;
+  animation: placeholderShimmer 1s linear infinite forwards;
+}
+
+.c1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 1.6rem;
+}
+
+.c3 {
+  font-size: 1.8rem;
+  line-height: 1.6rem;
+  font-weight: 600;
+  color: #030517;
+}
+
+.c4 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #8F8F8F;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-top: 0.8rem;
+}
+
+.c5 .c6 {
+  margin-left: 0.8rem;
+}
+
+<article
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <img
+      alt="Ghost in the shell"
+      src="https://source.unsplash.com/300x140"
+    />
+  </div>
+  <div
+    class="c2"
+  >
+    <div
+      class=""
+    >
+      <h3
+        class="c3"
+      >
+        Ghost in the shell
+      </h3>
+      <h3
+        class="c4"
+      >
+        Masamune Shirow
+      </h3>
+    </div>
+    <div
+      class="c5"
+    >
+      <button
+        class="c6 c7"
+        color="white"
+      >
+        <div>
+          <svg
+            aria-hidden="true"
+            class="c8"
+            fill="currentColor"
+            focusable="false"
+            height="20"
+            viewBox="0 0 24 24"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1zM18 7H6v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7z"
+            />
+          </svg>
+        </div>
+      </button>
+      <button
+        class="c6 c9"
+        color="white"
+      >
+        <div>
+          <svg
+            aria-hidden="true"
+            class="c8"
+            fill="currentColor"
+            focusable="false"
+            height="20"
+            viewBox="0 0 24 24"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83a.996.996 0 000-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</article>
+`;
