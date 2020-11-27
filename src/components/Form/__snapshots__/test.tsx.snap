@@ -120,16 +120,17 @@ exports[`<Form /> should render the form 1`] = `
         >
           <label
             class="c1"
-            for="Email"
+            for=""
           >
-            Email
+            email
           </label>
           <div
             class="c2"
           >
             <input
               class="c3"
-              placeholder="Email"
+              name="email"
+              placeholder="email"
               type="text"
               value=""
             />
@@ -140,16 +141,17 @@ exports[`<Form /> should render the form 1`] = `
         >
           <label
             class="c1"
-            for="Password"
+            for=""
           >
-            Password
+            password
           </label>
           <div
             class="c2"
           >
             <input
               class="c3"
-              placeholder="Password"
+              name="password"
+              placeholder="password"
               type="text"
               value=""
             />

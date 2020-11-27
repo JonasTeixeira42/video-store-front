@@ -53,6 +53,7 @@ describe('<TextField />', () => {
         onInput={onInput}
         label="TextField"
         labelFor="TextField"
+        name="TextField"
         id="TextField"
       />,
     );
@@ -65,7 +66,7 @@ describe('<TextField />', () => {
       expect(input).toHaveValue(text);
       expect(onInput).toHaveBeenCalledTimes(text.length);
     });
-    expect(onInput).toHaveBeenCalledWith(text);
+    expect(onInput).toHaveBeenCalledWith('TextField', text);
   });
 
   it('Is accessible by tab', () => {

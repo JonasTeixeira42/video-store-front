@@ -1,32 +1,37 @@
-import Home, { HomeTemplateProps } from 'templates/Home';
-import bannersMock from 'components/BannerSlider/mock';
-import gamesMock from 'components/GameCardSlider/mock';
-import highlightMock from 'components/Highlight/mock';
+import TextField from 'components/TextField';
+import { FormEvent, useState, ChangeEvent } from 'react';
 
-export default function Index(props: HomeTemplateProps) {
-  return <Home {...props} />;
-}
+const initialFormData = {
+  teste: '',
+};
 
-//ATENCAO
-//COMANDO yarn next export gera um estatico purao pra landing pages
+export default function Index() {
+  const [data, setData] = useState(initialFormData);
 
-// getStaticProps/getServerSideProps SÓ FUNCIONAM EM PAGES
+  const teste = (name: string, value: string) => {
+    setData({
+      ...data,
 
-// getStaticProps metodo para SSG, vai gerar o estatico em build time
-//getServerSideProps metodo para SSR, vai gerar o estatico para cada request
-
-export function getStaticProps() {
-  return {
-    props: {
-      banners: bannersMock,
-      newGames: gamesMock,
-      mostPopularHighlight: highlightMock,
-      mostPopularGames: gamesMock,
-      upcomingGames: gamesMock,
-      upcomingHighlight: highlightMock,
-      upcomingMoreGames: gamesMock,
-      freeGames: gamesMock,
-      freeHighlight: highlightMock,
-    },
+      [name]: value,
+    });
   };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    console.log(data);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <TextField
+        label="teste"
+        name="teste"
+        placeholder="teste"
+        onInput={teste}
+      />
+
+      <button type="submit">butao</button>
+    </form>
+  );
 }

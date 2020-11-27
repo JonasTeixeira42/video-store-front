@@ -1,15 +1,13 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { AddBox } from '@styled-icons/material-outlined/';
+import TextField from 'components/TextField';
 
 import Form, { FormProps } from '.';
-
-import inputs from './mocks';
 
 export default {
   title: 'Form',
   component: Form,
   args: {
-    inputs,
     buttonLabel: 'Cadastrar',
     buttonIcon: <AddBox size={24} />,
   },
@@ -22,6 +20,9 @@ export default {
 
 export const Default: Story<FormProps> = (args) => (
   <div style={{ maxWidth: '42rem', margin: 'auto' }}>
-    <Form {...args} />
+    <Form {...args}>
+      <TextField label="email" placeholder="email" name="email" />
+      <TextField label="password" placeholder="password" name="password" />
+    </Form>
   </div>
 );

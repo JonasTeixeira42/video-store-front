@@ -3,11 +3,12 @@ import React, { useState, InputHTMLAttributes } from 'react';
 import * as S from './styles';
 
 export type TextFieldProps = {
-  onInput?: (value: string) => void;
+  onInput?: (inputName: string, inputValue: string) => void;
   label?: string;
   labelFor?: string;
   initialValue?: string;
   icon?: React.ReactNode;
+  name?: string;
   error?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
@@ -22,11 +23,12 @@ const TextField = ({
 }: TextFieldProps) => {
   const [value, setValue] = useState(initialValue);
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.currentTarget.value;
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.currentTarget;
+    const newValue = value;
     setValue(newValue);
 
-    !!onInput && onInput(newValue);
+    !!onInput && onInput(name, value);
   };
 
   return (

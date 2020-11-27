@@ -3,7 +3,6 @@ import ReactModal from 'react-modal';
 
 export type ModalProps = {
   children: React.ReactNode;
-  modalTitle?: string;
   isOpen: boolean;
   setIsOpen?: () => void;
 };
@@ -26,6 +25,7 @@ const Modal = ({ children, isOpen = false, setIsOpen }: ModalProps) => {
         content: {
           maxWidth: '42rem',
           minWidth: '30rem',
+          minHeight: '50%',
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
