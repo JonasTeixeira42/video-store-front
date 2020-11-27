@@ -1,22 +1,21 @@
 import React, { FormEvent, useCallback, useState } from 'react';
 import Modal, { ModalProps } from 'components/Modal';
-import Heading from 'components/Heading';
-import Form from 'components/Form';
 import { AddBox } from '@styled-icons/material-outlined/';
 
 import TextField from 'components/TextField';
+import Heading from 'components/Heading';
+import Form from 'components/Form';
 
 import * as S from './styles';
 
 const initialData = {
   name: '',
-  description: '',
+  director: '',
 };
 
-const ModalAddMovies = ({
-  isOpen = true,
-  setIsOpen,
-}: Omit<ModalProps, 'children'>) => {
+export type ModalAddMoviesProps = Omit<ModalProps, 'children'>;
+
+const ModalAddMovies = ({ isOpen = false, setIsOpen }: ModalAddMoviesProps) => {
   const [formData, setFormData] = useState(initialData);
 
   const handleSubmit = useCallback(
@@ -41,7 +40,7 @@ const ModalAddMovies = ({
 
   return (
     <S.Wrapper>
-      <Modal isOpen={isOpen}>
+      <Modal aria-hidden={!isOpen} isOpen={isOpen} setIsOpen={setIsOpen}>
         <Heading lineLeft lineColor="primary">
           Add a Movie
         </Heading>

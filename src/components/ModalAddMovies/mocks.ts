@@ -7,9 +7,9 @@ export default [
   },
 
   {
-    label: 'Description',
-    labelFor: 'Description',
-    placeholder: 'Description',
-    name: 'description',
+    label: 'Director',
+    labelFor: 'Director',
+    placeholder: 'Director',
+    name: 'director',
   },
 ];

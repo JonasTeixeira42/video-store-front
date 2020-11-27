@@ -1,37 +1,12 @@
-import TextField from 'components/TextField';
-import { FormEvent, useState, ChangeEvent } from 'react';
-
-const initialFormData = {
-  teste: '',
-};
+import ModalAddMovies from 'components/ModalAddMovies';
+import { useState } from 'react';
 
 export default function Index() {
-  const [data, setData] = useState(initialFormData);
+  const [modalOpen, setModalOpen] = useState(true);
 
-  const teste = (name: string, value: string) => {
-    setData({
-      ...data,
+  function toggleModal(): void {
+    setModalOpen(!modalOpen);
+  }
 
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    console.log(data);
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <TextField
-        label="teste"
-        name="teste"
-        placeholder="teste"
-        onInput={teste}
-      />
-
-      <button type="submit">butao</button>
-    </form>
-  );
+  return <ModalAddMovies isOpen={modalOpen} setIsOpen={toggleModal} />;
 }

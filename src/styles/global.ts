@@ -63,7 +63,7 @@ const GlobalStyles: GlobalStyleComponent<
       font-size: ${theme.font.sizes.medium};
 
       ${!removeBg &&
-      css`
+    css`
         background-color: ${theme.colors.mainBg};
       `}
     }
@@ -80,6 +80,36 @@ const GlobalStyles: GlobalStyleComponent<
 
   .ReactModal__Overlay--before-close {
     opacity: 0;
+  }
+
+  .Modal {
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: auto;
+    position: relative;
+    min-width: 500px;
+    margin: 30px 0;
+    padding: 20px;
+    outline: none;
+  }
+
+  @media (max-width: 767px) {
+    .Modal {
+      min-width: auto;
+      width: 90%;
+    }
+  }
+
+  .Overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #121214e6;
   }
 `;
 

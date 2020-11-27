@@ -21,19 +21,8 @@ const Modal = ({ children, isOpen = false, setIsOpen }: ModalProps) => {
       isOpen={modalStatus}
       ariaHideApp={false}
       closeTimeoutMS={300}
-      style={{
-        content: {
-          maxWidth: '42rem',
-          minWidth: '30rem',
-          minHeight: '50%',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-        },
-        overlay: {
-          backgroundColor: '#121214e6',
-        },
-      }}
+      className="Modal"
+      overlayClassName="Overlay"
     >
       {children}
     </ReactModal>
