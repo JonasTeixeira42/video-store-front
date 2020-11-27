@@ -33,6 +33,16 @@ describe('<Button />', () => {
     });
   });
 
+  it('should render xsmall size when size passed', () => {
+    renderWithTheme(<Button size="xsmall">Movies</Button>);
+
+    expect(
+      screen.getByRole('button', { name: /movies/i }).firstElementChild,
+    ).toHaveStyle({
+      padding: '0.8rem',
+    });
+  });
+
   it('should render black color when color passed', () => {
     renderWithTheme(<Button color="lightBlack">Movies</Button>);
 

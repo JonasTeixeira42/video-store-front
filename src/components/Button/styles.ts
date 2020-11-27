@@ -9,6 +9,12 @@ type WrapperProps = {
 } & Pick<ButtonProps, 'size' | 'color' | 'background'>;
 
 const wrapperModifiers = {
+  xsmall: (theme: DefaultTheme) => css`
+    p {
+      padding: ${theme.spacings.xxsmall};
+    }
+  `,
+
   small: (theme: DefaultTheme) => css`
     p {
       padding: ${theme.spacings.xsmall};

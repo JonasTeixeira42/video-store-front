@@ -7,7 +7,7 @@ type ButtonType = ButtonHTMLAttributes<HTMLButtonElement>;
 export type BackgroundColors = 'white' | 'primary' | 'secondary';
 
 export type ButtonProps = {
-  size?: 'small' | 'large';
+  size?: 'xsmall' | 'small' | 'large';
   color?: 'white' | 'lightBlack';
   background?: BackgroundColors;
   icon?: React.ReactNode;

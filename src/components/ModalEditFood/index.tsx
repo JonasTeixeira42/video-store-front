@@ -12,6 +12,7 @@ import * as S from 'components/ModalStyles';
 export type Movie = {
   id: string;
   name: string;
+  image?: string;
   director: {
     id: string;
     name: string;
