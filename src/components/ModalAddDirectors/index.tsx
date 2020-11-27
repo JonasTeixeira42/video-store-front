@@ -1,7 +1,7 @@
 import React, { FormEvent, useCallback, useState } from 'react';
-import Modal, { ModalProps } from 'components/Modal';
 import { AddBox } from '@styled-icons/material-outlined/';
 
+import Modal, { ModalProps } from 'components/Modal';
 import TextField from 'components/TextField';
 import Heading from 'components/Heading';
 import Form from 'components/Form';
@@ -10,12 +10,14 @@ import * as S from 'components/ModalStyles';
 
 const initialData = {
   name: '',
-  director: '',
 };
 
-export type ModalAddMoviesProps = Omit<ModalProps, 'children'>;
+export type ModalAddDirectorsProps = Omit<ModalProps, 'children'>;
 
-const ModalAddMovies = ({ isOpen = false, setIsOpen }: ModalAddMoviesProps) => {
+const ModalAddDirectors = ({
+  isOpen = false,
+  setIsOpen,
+}: ModalAddDirectorsProps) => {
   const [formData, setFormData] = useState(initialData);
 
   const handleSubmit = useCallback(
@@ -42,10 +44,10 @@ const ModalAddMovies = ({ isOpen = false, setIsOpen }: ModalAddMoviesProps) => {
     <S.Wrapper aria-hidden={!isOpen}>
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
         <Heading lineLeft lineColor="primary">
-          Add a Movie
+          Add a Director
         </Heading>
         <Form
-          buttonLabel="Add Movie"
+          buttonLabel="Add Director"
           buttonIcon={<AddBox size={24} />}
           onSubmit={handleSubmit}
         >
@@ -55,16 +57,10 @@ const ModalAddMovies = ({ isOpen = false, setIsOpen }: ModalAddMoviesProps) => {
             name="name"
             onInput={() => handleInput}
           />
-          <TextField
-            label="Director"
-            placeholder="Director"
-            name="director"
-            onInput={() => handleInput}
-          />
         </Form>
       </Modal>
     </S.Wrapper>
   );
 };
 
-export default ModalAddMovies;
+export default ModalAddDirectors;
