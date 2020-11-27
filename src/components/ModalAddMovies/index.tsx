@@ -39,8 +39,8 @@ const ModalAddMovies = ({ isOpen = false, setIsOpen }: ModalAddMoviesProps) => {
   );
 
   return (
-    <S.Wrapper>
-      <Modal aria-hidden={!isOpen} isOpen={isOpen} setIsOpen={setIsOpen}>
+    <S.Wrapper aria-hidden={!isOpen}>
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
         <Heading lineLeft lineColor="primary">
           Add a Movie
         </Heading>
@@ -56,9 +56,9 @@ const ModalAddMovies = ({ isOpen = false, setIsOpen }: ModalAddMoviesProps) => {
             onInput={() => handleInput}
           />
           <TextField
-            label="Description"
-            placeholder="Description"
-            name="description"
+            label="Director"
+            placeholder="Director"
+            name="director"
             onInput={() => handleInput}
           />
         </Form>

@@ -1,3 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div``;
+import * as HeadingStyles from 'components/Heading/styles';
+
+export const Wrapper = styled.div`
+  ${({ theme }) => css`
+    ${HeadingStyles.Wrapper} {
+      margin-bottom: ${theme.spacings.medium};
+    }
+  `}
+`;
