@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import * as ButtonStyles from 'components/Button/styles';
+
 export const Wrapper = styled.article`
   ${({ theme }) => css`
     display: flex;
@@ -47,7 +49,7 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    /* height: 100%; */
     margin: ${theme.spacings.xsmall};
   `}
 `;
@@ -77,5 +79,9 @@ export const OperationBox = styled.div`
     align-items: center;
     justify-content: flex-end;
     margin-top: ${theme.spacings.xxsmall};
+
+    ${ButtonStyles.Wrapper} {
+      margin-left: ${theme.spacings.xxsmall};
+    }
   `}
 `;

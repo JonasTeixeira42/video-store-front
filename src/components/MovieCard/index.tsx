@@ -2,10 +2,10 @@ import React from 'react';
 import { Edit } from 'styled-icons/material-outlined';
 import { Delete } from 'styled-icons/material-outlined/';
 
+import Button from 'components/Button';
 import { Movie } from 'components/ModalEditFood';
 
 import * as S from './styles';
-import Button from 'components/Button';
 
 export type MovieCardProps = {
   movie: Movie;
@@ -27,8 +27,12 @@ const MovieCard = ({ movie, onEdit, onDelete }: MovieCardProps) => {
           <S.Director>{movie.director.name}</S.Director>
         </S.Info>
         <S.OperationBox>
+          <Button
+            size="xsmall"
+            background="primary"
+            icon={<Delete size={20} />}
+          />
           <Button size="xsmall" icon={<Edit size={20} />} />
-          <Button size="xsmall" icon={<Delete size={20} />} />
         </S.OperationBox>
       </S.Content>
     </S.Wrapper>

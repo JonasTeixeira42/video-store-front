@@ -10,19 +10,22 @@ type WrapperProps = {
 
 const wrapperModifiers = {
   xsmall: (theme: DefaultTheme) => css`
-    p {
+    p,
+    & > div {
       padding: ${theme.spacings.xxsmall};
     }
   `,
 
   small: (theme: DefaultTheme) => css`
-    p {
+    p,
+    & > div {
       padding: ${theme.spacings.xsmall};
     }
   `,
 
   large: (theme: DefaultTheme) => css`
-    p {
+    p,
+    & > div {
       padding: ${theme.spacings.xsmall} ${theme.spacings.small};
     }
   `,
@@ -70,8 +73,6 @@ export const Wrapper = styled.button<WrapperProps>`
       transition: background 0.3s;
     }
 
-    ${!!size && wrapperModifiers[size!](theme)};
-
     ${hasIcon && wrapperModifiers.withIcon(theme, background!)}
 
     ${!hasChildren &&
@@ -80,5 +81,7 @@ export const Wrapper = styled.button<WrapperProps>`
         border-radius: ${theme.border.radius};
       }
     `}
+
+    ${!!size && wrapperModifiers[size!](theme)};
   `}
 `;
