@@ -18,6 +18,7 @@ describe('<ModalAddMovies />', () => {
     expect(
       screen.getByRole('button', { name: /Add Movie/i }),
     ).toBeInTheDocument();
+    expect(screen.getByLabelText(/choose a file/i)).toBeInTheDocument();
 
     expect(container.firstChild).toMatchSnapshot();
   });
