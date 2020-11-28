@@ -10,6 +10,14 @@ export default {
   args: {
     movie,
   },
+  argTypes: {
+    onDelete: {
+      action: 'clicked',
+    },
+    onEdit: {
+      action: 'clicked',
+    },
+  },
   parameters: {
     backgrounds: {
       default: 'won-dark',

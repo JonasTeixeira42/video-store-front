@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
-import { buttons, darken } from 'polished';
+import { darken } from 'polished';
 
 import MovieCard from '.';
 
