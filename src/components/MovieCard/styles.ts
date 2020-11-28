@@ -10,6 +10,7 @@ export const Wrapper = styled.article`
     max-width: 30rem;
     height: 100%;
     background-color: ${theme.colors.white};
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   `}
 `;
 
@@ -49,7 +50,6 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* height: 100%; */
     margin: ${theme.spacings.xsmall};
   `}
 `;

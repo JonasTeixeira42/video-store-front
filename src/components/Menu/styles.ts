@@ -50,7 +50,7 @@ export const MenuOption = styled.div`
         position: absolute;
         display: block;
         height: 0.3rem;
-        background: ${theme.colors.primary};
+        background: ${theme.colors.secondary};
         animation: hoverAnimation 0.2s forwards;
       }
 

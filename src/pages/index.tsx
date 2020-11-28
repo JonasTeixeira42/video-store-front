@@ -1,12 +1,5 @@
-import ModalAddMovies from 'components/ModalAddMovies';
-import { useState } from 'react';
+import Home from 'templates/Home';
 
 export default function Index() {
-  const [modalOpen, setModalOpen] = useState(true);
-
-  function toggleModal(): void {
-    setModalOpen(!modalOpen);
-  }
-
-  return <ModalAddMovies isOpen={modalOpen} setIsOpen={toggleModal} />;
+  return <Home />;
 }
