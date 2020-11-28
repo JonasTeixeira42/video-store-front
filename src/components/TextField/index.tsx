@@ -10,6 +10,7 @@ export type TextFieldProps = {
   icon?: React.ReactNode;
   name?: string;
   error?: string;
+  type?: 'text' | 'file';
 } & InputHTMLAttributes<HTMLInputElement>;
 
 const TextField = ({
@@ -18,6 +19,7 @@ const TextField = ({
   icon,
   error,
   initialValue = '',
+  type = 'text',
   onInput,
   ...props
 }: TextFieldProps) => {
@@ -35,7 +37,7 @@ const TextField = ({
     <S.Wrapper error={!!error}>
       {!!label && <S.Label htmlFor={labelFor}>{label}</S.Label>}
       <S.InputWrapper>
-        <S.Input type="text" onChange={onChange} value={value} {...props} />
+        <S.Input type={type} onChange={onChange} value={value} {...props} />
         {!!icon && <S.Icon>{icon}</S.Icon>}
       </S.InputWrapper>
       {!!error && <S.Error>{error}</S.Error>}
