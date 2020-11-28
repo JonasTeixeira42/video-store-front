@@ -5,7 +5,7 @@ import Menu from '.';
 
 describe('<Menu />', () => {
   it('should render the menu', () => {
-    renderWithTheme(<Menu />);
+    const { container } = renderWithTheme(<Menu />);
 
     expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument();
     expect(screen.getAllByText('Add Movie')[0]).toBeInTheDocument();
@@ -13,6 +13,7 @@ describe('<Menu />', () => {
     expect(
       screen.getByRole('img', { name: /Clapperboard/i }),
     ).toBeInTheDocument();
+    expect(container.parentElement).toMatchSnapshot();
   });
 
   it('should handle the open/close menu', () => {
