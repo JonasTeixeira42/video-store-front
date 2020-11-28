@@ -24,11 +24,14 @@ export const SectionMenu = styled(Section)`
   `}
 `;
 
-export const SectionMovies = styled(Section)`
+export const SectionMovies = styled(Section)``;
+
+export const MoviesWrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    width: 100%;
 
     ${MovieCardStyles.Wrapper} {
       margin: ${theme.spacings.small};
@@ -53,4 +56,9 @@ export const SectionFooter = styled(Section)`
       }
     }
   `}
+`;
+
+export const InputWrapper = styled.div`
+  max-width: 34rem;
+  margin: 0 auto;
 `;

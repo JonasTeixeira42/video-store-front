@@ -63,7 +63,7 @@ const GlobalStyles: GlobalStyleComponent<
       font-size: ${theme.font.sizes.medium};
 
       ${!removeBg &&
-    css`
+      css`
         background-color: ${theme.colors.mainBg};
       `}
     }
@@ -110,6 +110,7 @@ const GlobalStyles: GlobalStyleComponent<
     right: 0;
     bottom: 0;
     background-color: #121214e6;
+    z-index: 20;
   }
 `;
 

@@ -1,4 +1,4 @@
-import React, { FormEvent, useCallback, useState } from 'react';
+import React, { FormEvent, useCallback, useState, useEffect } from 'react';
 import { AddBox } from '@styled-icons/material-outlined/';
 
 import TextField from 'components/TextField';
@@ -19,17 +19,26 @@ export type Movie = {
   };
 };
 
+type FormDataProps = {
+  name: string | undefined;
+  director: string | undefined;
+};
+
 export type ModalEditFoodProps = {
-  movie: Movie;
+  movie?: Movie;
 } & Omit<ModalProps, 'children'>;
 
 const ModalEditFood = ({ movie, isOpen, setIsOpen }: ModalEditFoodProps) => {
-  const initialData = {
-    name: movie.name,
-    director: movie.director.name,
-  };
+  const [formData, setFormData] = useState<FormDataProps>({} as FormDataProps);
 
-  const [formData, setFormData] = useState(initialData);
+  useEffect(() => {
+    const initialData = {
+      name: movie?.name,
+      director: movie?.director?.name,
+    };
+
+    setFormData(initialData);
+  }, [movie]);
 
   const handleSubmit = useCallback(
     (event: FormEvent<HTMLFormElement>) => {
@@ -42,6 +51,7 @@ const ModalEditFood = ({ movie, isOpen, setIsOpen }: ModalEditFoodProps) => {
 
   const handleInput = useCallback(
     (inputName: string, inputValue: string) => {
+      console.log('Nome', inputName, 'Value', inputValue);
       setFormData({
         ...formData,
 
@@ -66,7 +76,7 @@ const ModalEditFood = ({ movie, isOpen, setIsOpen }: ModalEditFoodProps) => {
             label="Name"
             placeholder="Name"
             name="name"
-            onInput={() => handleInput}
+            onInput={handleInput}
             initialValue={formData.name}
           />
           <TextField
@@ -74,7 +84,7 @@ const ModalEditFood = ({ movie, isOpen, setIsOpen }: ModalEditFoodProps) => {
             placeholder="Director"
             name="director"
             initialValue={formData.director}
-            onInput={() => handleInput}
+            onInput={handleInput}
           />
         </Form>
       </Modal>

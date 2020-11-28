@@ -1,7 +1,7 @@
 export default [
   {
     id: '1',
-    name: 'Ghost in the shell',
+    name: 'teste',
     image: 'https://source.unsplash.com/300x140',
     director: {
       id: '1',
@@ -50,7 +50,7 @@ export default [
     image: 'https://source.unsplash.com/300x140',
     director: {
       id: '1',
-      name: 'Masamune Shirow',
+      name: 'teste',
     },
   },
 ];
