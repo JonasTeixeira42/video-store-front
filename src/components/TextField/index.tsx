@@ -4,6 +4,8 @@ import * as S from './styles';
 
 export type TextFieldProps = {
   onInput?: (inputName: string, inputValue: string) => void;
+  setResetValue?: () => void;
+  resetValue?: boolean;
   label?: string;
   labelFor?: string;
   initialValue?: string;

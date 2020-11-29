@@ -11,6 +11,7 @@ import * as S from './styles';
 
 import moviesMock from './mock';
 import ModalEditFood, { Movie } from 'components/ModalEditFood';
+import api from 'services/api';
 
 const Home = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -19,10 +20,18 @@ const Home = () => {
   const [openEditModal, setOpenEditModal] = useState(false);
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
 
-  useEffect(() => {
-    setMovies(moviesMock);
-    setFilteredMovies(moviesMock);
+  const fetchMovies = useCallback(async () => {
+    const response = await api.get('movies');
+
+    const { data } = response;
+
+    setMovies(data);
+    setFilteredMovies(data);
   }, []);
+
+  useEffect(() => {
+    fetchMovies();
+  }, [fetchMovies]);
 
   const searchMovies = useCallback(
     (_: string, value: string) => {
@@ -59,7 +68,7 @@ const Home = () => {
         isOpen={openEditModal}
         setIsOpen={handleOpenEditModal}
       />
-      <section>
+      <S.Wrapper>
         <S.SectionMenu>
           <Menu />
         </S.SectionMenu>
@@ -89,7 +98,7 @@ const Home = () => {
             <Footer />
           </div>
         </S.SectionFooter>
-      </section>
+      </S.Wrapper>
     </>
   );
 };

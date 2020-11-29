@@ -3,7 +3,12 @@ import styled, { css } from 'styled-components';
 import * as MenuStyles from 'components/Menu/styles';
 import * as MovieCardStyles from 'components/MovieCard/styles';
 import * as FooterStyles from 'components/Footer/styles';
-import media from 'styled-media-query';
+
+export const Wrapper = styled.main`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
 
 export const Section = styled.section`
   ${({ theme }) => css`
@@ -24,7 +29,9 @@ export const SectionMenu = styled(Section)`
   `}
 `;
 
-export const SectionMovies = styled(Section)``;
+export const SectionMovies = styled(Section)`
+  flex: 1;
+`;
 
 export const MoviesWrapper = styled.div`
   ${({ theme }) => css`
