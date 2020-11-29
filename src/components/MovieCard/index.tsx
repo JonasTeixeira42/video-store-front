@@ -18,7 +18,7 @@ const MovieCard = ({ movie, onEdit, onDelete }: MovieCardProps) => {
     <S.Wrapper>
       {!!movie.image && (
         <S.ImageBox>
-          <img src={movie.image} alt={movie.name} />
+          <img src={movie.url} alt={movie.name} />
         </S.ImageBox>
       )}
       <S.Content>

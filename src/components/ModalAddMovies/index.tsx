@@ -33,11 +33,13 @@ export type ModalAddMoviesProps = Omit<ModalProps, 'children'>;
 const ModalAddMovies = ({ isOpen = false, setIsOpen }: ModalAddMoviesProps) => {
   const [formData, setFormData] = useState(initialData);
   const [options, setOptions] = useState<OptionProps[]>();
-  const [movieImage, setMovieImage] = useState<File | null>(null);
+  const [movieImage, setMovieImage] = useState<File>();
 
   useEffect(() => {
     async function loadDirectors(): Promise<void> {
       const response = await api.get('directors');
+
+      console.log('teste');
 
       setOptions(response.data);
     }
@@ -46,12 +48,23 @@ const ModalAddMovies = ({ isOpen = false, setIsOpen }: ModalAddMoviesProps) => {
   }, []);
 
   const handleSubmit = useCallback(
-    (event: FormEvent<HTMLFormElement>) => {
+    async (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
 
-      console.log(formData);
+      const data = new FormData();
+      data.append('name', formData.name);
+      data.append('file', movieImage || '');
+      data.append('director_id', formData.director);
+
+      try {
+        await api.post('movies', data);
+
+        alert('Sucess');
+      } catch (error) {
+        console.log(error.response.data.error);
+      }
     },
-    [formData],
+    [formData, movieImage],
   );
 
   const handleInput = useCallback(

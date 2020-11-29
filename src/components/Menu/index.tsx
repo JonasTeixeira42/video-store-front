@@ -9,14 +9,20 @@ import ModalAddDirectors from 'components/ModalAddDirectors';
 
 import * as S from './styles';
 
-const Menu = () => {
+type MenuProps = {
+  onCreateMovie?: () => void;
+};
+
+const Menu = ({ onCreateMovie }: MenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [openAddMovie, setOpenAddMovie] = useState(false);
   const [openAddDirector, setOpenAddDirector] = useState(false);
 
   const toggleAddModal = useCallback(() => {
     setOpenAddMovie(!openAddMovie);
-  }, [openAddMovie]);
+
+    !!onCreateMovie && onCreateMovie();
+  }, [openAddMovie, onCreateMovie]);
 
   const toggleDirectorModal = useCallback(() => {
     setOpenAddDirector(!openAddDirector);
@@ -24,11 +30,15 @@ const Menu = () => {
 
   return (
     <>
-      <ModalAddMovies isOpen={openAddMovie} setIsOpen={toggleAddModal} />
-      <ModalAddDirectors
-        isOpen={openAddDirector}
-        setIsOpen={toggleDirectorModal}
-      />
+      {openAddMovie && (
+        <ModalAddMovies isOpen={openAddMovie} setIsOpen={toggleAddModal} />
+      )}
+      {openAddDirector && (
+        <ModalAddDirectors
+          isOpen={openAddDirector}
+          setIsOpen={toggleDirectorModal}
+        />
+      )}
       <S.Wrapper>
         <Logo size="normal" hiddenOnMobile />
 

@@ -70,7 +70,7 @@ const Home = () => {
       />
       <S.Wrapper>
         <S.SectionMenu>
-          <Menu />
+          <Menu onCreateMovie={fetchMovies} />
         </S.SectionMenu>
 
         <S.SectionMovies>
