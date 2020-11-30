@@ -35,7 +35,7 @@ const ModalAddDirectors = ({
       try {
         await api.post('directors', formData);
 
-        alert('Sucess');
+        alert('Success');
       } catch (error) {
         alert(error.response.data.error);
       }

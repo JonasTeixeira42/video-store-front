@@ -10,7 +10,7 @@ import * as S from './styles';
 export type MovieCardProps = {
   movie: Movie;
   onEdit?: (movie: Movie) => void;
-  onDelete?: (id: string) => void;
+  onDelete?: (movie: Movie) => void;
 };
 
 const MovieCard = ({ movie, onEdit, onDelete }: MovieCardProps) => {
@@ -31,7 +31,7 @@ const MovieCard = ({ movie, onEdit, onDelete }: MovieCardProps) => {
             size="xsmall"
             background="primary"
             icon={<Delete size={20} />}
-            onClick={() => onDelete!(movie.id)}
+            onClick={() => onDelete!(movie)}
           />
           <Button
             size="xsmall"

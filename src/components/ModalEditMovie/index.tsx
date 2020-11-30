@@ -82,12 +82,12 @@ const ModalEditMovie = ({
 
         !!fetchMovies && fetchMovies();
 
-        alert('Sucess');
+        alert('Success');
       } catch (error) {
         console.log(error.response.data.error);
       }
     },
-    [formData, movieImage, movie?.id],
+    [formData, movieImage, movie?.id, fetchMovies],
   );
 
   const handleInput = useCallback(

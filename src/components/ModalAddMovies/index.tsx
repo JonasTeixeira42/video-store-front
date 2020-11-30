@@ -58,7 +58,7 @@ const ModalAddMovies = ({ isOpen = false, setIsOpen }: ModalAddMoviesProps) => {
       try {
         await api.post('movies', data);
 
-        alert('Sucess');
+        alert('Success');
       } catch (error) {
         console.log(error.response.data.error);
       }

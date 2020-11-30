@@ -9,14 +9,15 @@ import Menu from 'components/Menu';
 
 import * as S from './styles';
 
-import moviesMock from './mock';
 import ModalEditMovie, { Movie } from 'components/ModalEditMovie';
 import api from 'services/api';
+import ModalDeleteMovie from 'components/ModalDeleteMovie';
 
 const Home = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [filteredMovies, setFilteredMovies] = useState<Movie[]>([]);
-  const [editingFood, setEditingFood] = useState<Movie>({} as Movie);
+  const [editingMovie, setEditingMovie] = useState<Movie>({} as Movie);
+  const [deleteMovie, setDeleteMovie] = useState<Movie>({} as Movie);
   const [openEditModal, setOpenEditModal] = useState(false);
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
 
@@ -53,22 +54,59 @@ const Home = () => {
     setOpenEditModal(!openEditModal);
   }, [openEditModal]);
 
+  const handleOpenDeleteModal = useCallback(() => {
+    setOpenDeleteModal(!openDeleteModal);
+  }, [openDeleteModal]);
+
   const handleEditModal = useCallback(
     (movie: Movie) => {
       handleOpenEditModal();
-      setEditingFood(movie);
+      setEditingMovie(movie);
     },
     [handleOpenEditModal],
+  );
+
+  const handleDeleteModal = useCallback(
+    (movie: Movie) => {
+      handleOpenDeleteModal();
+      setDeleteMovie(movie);
+    },
+    [handleOpenDeleteModal],
+  );
+
+  const submitDelete = useCallback(
+    async (id: string) => {
+      try {
+        await api.delete(`movies/${id}`);
+
+        fetchMovies();
+        handleOpenDeleteModal();
+
+        alert('Movie has been Removed');
+      } catch (error) {
+        alert(error.response.data.error);
+      }
+    },
+    [fetchMovies],
   );
 
   return (
     <>
       <ModalEditMovie
-        movie={editingFood}
+        movie={editingMovie}
         isOpen={openEditModal}
         setIsOpen={handleOpenEditModal}
         fetchMovies={fetchMovies}
       />
+
+      {openDeleteModal && (
+        <ModalDeleteMovie
+          movie={deleteMovie}
+          isOpen={openDeleteModal}
+          setIsOpen={handleOpenDeleteModal}
+          onDelete={submitDelete}
+        />
+      )}
 
       <S.Wrapper>
         <S.SectionMenu>
@@ -90,6 +128,7 @@ const Home = () => {
                 key={movie.id}
                 movie={movie}
                 onEdit={handleEditModal}
+                onDelete={handleDeleteModal}
               />
             ))}
           </S.MoviesWrapper>
