@@ -1,8 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Locadora Soitic
 
-## Getting Started
+Esse é um projeto fron-end de uma locadora que faz parte do teste técnico da Soitic. O projeto foi desenvolvido em React e com o framework NextJS. O projeto permite que o administrador consiga administrar a locadora, desde cadastro de diretores e filmes.
 
-First, run the development server:
+## Tecnologias utilizadas:
+
+- TypeScript
+- NextJS
+- Styled Components
+- Jest
+- React Testing Library
+- Storybook]
+- Eslint
+- Prettier
+- Husky
+
+## Rodar o projeto
+
+Para rodar o servidor de desenvolvimente:
 
 ```bash
 npm run dev
@@ -10,21 +24,16 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Commands
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `dev`: roda a aplicação em `localhost:3000`
+- `build`: cria versao de build para produção
+- `start`: roda um servidor para o código de produção
+- `lint`: rodar o linter no projeto
+- `test`: roda o jest para testar todos os componentes
+- `test:watch`: roda o jest em watch mode
+- `storybook`: roda o storybook em `localhost:6006`
+- `build-storybook`: cria a versão de build do storybook
+- `generate`: gera um componente com todos os arquivos iniciais, como de teste, estilo, storybook
