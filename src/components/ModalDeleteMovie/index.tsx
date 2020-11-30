@@ -8,7 +8,7 @@ import * as S from './styles';
 
 export type ModalDeleteMoviesProps = {
   movie: Movie;
-  onDelete: (id: string) => void;
+  onDelete?: (id: string) => void;
 } & Omit<ModalProps, 'children'>;
 
 const ModalDeleteMovie = ({
@@ -22,7 +22,7 @@ const ModalDeleteMovie = ({
   };
 
   return (
-    <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+    <Modal isOpen={isOpen} setIsOpen={setIsOpen} aria-hidden={!isOpen}>
       <S.Wrapper>
         <S.Text>
           <span>{`Deseja remover o filme ${movie.name}?`}</span>
@@ -34,7 +34,7 @@ const ModalDeleteMovie = ({
           <Button
             size="small"
             background="primary"
-            onClick={() => onDelete(movie.id)}
+            onClick={handleSubmitDelete}
           >
             Sim
           </Button>
