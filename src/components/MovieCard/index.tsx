@@ -3,7 +3,7 @@ import { Edit } from 'styled-icons/material-outlined';
 import { Delete } from 'styled-icons/material-outlined/';
 
 import Button from 'components/Button';
-import { Movie } from 'components/ModalEditFood';
+import { Movie } from 'components/ModalEditMovie';
 
 import * as S from './styles';
 

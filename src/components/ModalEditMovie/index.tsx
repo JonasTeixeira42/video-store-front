@@ -33,11 +33,11 @@ type FormDataProps = {
   director: string | undefined;
 };
 
-export type ModalEditFoodProps = {
+export type ModalEditMovieProps = {
   movie?: Movie;
 } & Omit<ModalProps, 'children'>;
 
-const ModalEditFood = ({ movie, isOpen, setIsOpen }: ModalEditFoodProps) => {
+const ModalEditMovie = ({ movie, isOpen, setIsOpen }: ModalEditMovieProps) => {
   const [formData, setFormData] = useState<FormDataProps>({} as FormDataProps);
   const [movieImage, setMovieImage] = useState<File | null>(null);
 
@@ -120,4 +120,4 @@ const ModalEditFood = ({ movie, isOpen, setIsOpen }: ModalEditFoodProps) => {
   );
 };
 
-export default ModalEditFood;
+export default ModalEditMovie;

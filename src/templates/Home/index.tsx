@@ -10,7 +10,7 @@ import Menu from 'components/Menu';
 import * as S from './styles';
 
 import moviesMock from './mock';
-import ModalEditFood, { Movie } from 'components/ModalEditFood';
+import ModalEditMovie, { Movie } from 'components/ModalEditMovie';
 import api from 'services/api';
 
 const Home = () => {
@@ -63,11 +63,14 @@ const Home = () => {
 
   return (
     <>
-      <ModalEditFood
-        movie={editingFood}
-        isOpen={openEditModal}
-        setIsOpen={handleOpenEditModal}
-      />
+      {editingFood && (
+        <ModalEditMovie
+          movie={editingFood}
+          isOpen={openEditModal}
+          setIsOpen={handleOpenEditModal}
+        />
+      )}
+
       <S.Wrapper>
         <S.SectionMenu>
           <Menu onCreateMovie={fetchMovies} />
