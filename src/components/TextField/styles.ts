@@ -32,7 +32,7 @@ export const InputWrapper = styled.div`
     display: flex;
     background: ${theme.colors.lightGray};
     border-radius: 0.2rem;
-    padding: 0 ${theme.spacings.xsmall};
+    /* padding: 0 ${theme.spacings.xsmall}; */
     border: 0.2rem solid;
     border-color: ${theme.colors.lightGray};
 

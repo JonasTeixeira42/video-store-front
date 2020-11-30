@@ -14,7 +14,7 @@ describe('<ModalAddMovies />', () => {
       screen.getByRole('heading', { name: /Add a Movie/i }),
     ).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/name/i)).toBeInTheDocument();
-    expect(screen.getByPlaceholderText(/director/i)).toBeInTheDocument();
+    expect(screen.getByRole('combobox')).toBeInTheDocument();
     expect(
       screen.getByRole('button', { name: /Add Movie/i }),
     ).toBeInTheDocument();

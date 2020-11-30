@@ -16,6 +16,7 @@ import Form from 'components/Form';
 import * as ModalStyles from 'components/ModalStyles';
 import * as SelectStyles from 'components/SelectInputStyles';
 import * as S from './styles';
+
 import api from 'services/api';
 
 const initialData = {
@@ -38,8 +39,6 @@ const ModalAddMovies = ({ isOpen = false, setIsOpen }: ModalAddMoviesProps) => {
   useEffect(() => {
     async function loadDirectors(): Promise<void> {
       const response = await api.get('directors');
-
-      console.log('teste');
 
       setOptions(response.data);
     }

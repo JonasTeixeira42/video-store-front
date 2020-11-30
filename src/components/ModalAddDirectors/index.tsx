@@ -9,10 +9,6 @@ import Form from 'components/Form';
 import * as S from 'components/ModalStyles';
 import api from 'services/api';
 
-const initialData = {
-  name: '',
-};
-
 export type ModalAddDirectorsProps = Omit<ModalProps, 'children'>;
 
 const ModalAddDirectors = ({
@@ -20,7 +16,6 @@ const ModalAddDirectors = ({
   setIsOpen,
 }: ModalAddDirectorsProps) => {
   const [formData, setFormData] = useState({ name: '' });
-  const [resetValue, setResetValue] = useState(false);
 
   const handleInput = useCallback(
     (inputName: string, inputValue: string) => {
@@ -40,8 +35,6 @@ const ModalAddDirectors = ({
       try {
         await api.post('directors', formData);
 
-        setResetValue(true);
-
         alert('Sucess');
       } catch (error) {
         alert(error.response.data.error);
@@ -49,10 +42,6 @@ const ModalAddDirectors = ({
     },
     [formData],
   );
-
-  const handleResetValue = () => {
-    setResetValue(!resetValue);
-  };
 
   return (
     <S.Wrapper aria-hidden={!isOpen}>
@@ -69,8 +58,6 @@ const ModalAddDirectors = ({
             label="Name"
             placeholder="Name"
             name="name"
-            resetValue={resetValue}
-            setResetValue={handleResetValue}
             initialValue={formData.name}
             onInput={handleInput}
           />

@@ -27,7 +27,6 @@ exports[`<TextField /> Renders with error 1`] = `
   display: flex;
   background: #EAEAEA;
   border-radius: 0.2rem;
-  padding: 0 1.6rem;
   border: 0.2rem solid;
   border-color: #EAEAEA;
 }

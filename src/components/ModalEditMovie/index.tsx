@@ -15,7 +15,10 @@ import Form from 'components/Form';
 import Modal, { ModalProps } from 'components/Modal';
 
 import * as ModalStyles from 'components/ModalStyles';
+import * as SelectStyles from 'components/SelectInputStyles';
 import * as S from './styles';
+import { OptionProps } from 'components/ModalAddMovies';
+import api from 'services/api';
 
 export type Movie = {
   id: string;
@@ -35,28 +38,56 @@ type FormDataProps = {
 
 export type ModalEditMovieProps = {
   movie?: Movie;
+  fetchMovies?: () => void;
 } & Omit<ModalProps, 'children'>;
 
-const ModalEditMovie = ({ movie, isOpen, setIsOpen }: ModalEditMovieProps) => {
+const ModalEditMovie = ({
+  movie,
+  isOpen,
+  setIsOpen,
+  fetchMovies,
+}: ModalEditMovieProps) => {
   const [formData, setFormData] = useState<FormDataProps>({} as FormDataProps);
+  const [options, setOptions] = useState<OptionProps[]>();
   const [movieImage, setMovieImage] = useState<File | null>(null);
 
   useEffect(() => {
+    async function loadDirectors(): Promise<void> {
+      const response = await api.get('directors');
+
+      setOptions(response.data);
+    }
+
     const initialData = {
       name: movie?.name,
-      director: movie?.director?.name,
+      director: movie?.director?.id,
     };
 
     setFormData(initialData);
+
+    loadDirectors();
   }, [movie]);
 
   const handleSubmit = useCallback(
-    (event: FormEvent<HTMLFormElement>) => {
+    async (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
 
-      console.log(formData);
+      const data = new FormData();
+      data.append('name', formData.name || '');
+      data.append('file', movieImage || '');
+      data.append('director_id', formData.director || '');
+
+      try {
+        await api.put(`movies/${movie?.id}`, data);
+
+        !!fetchMovies && fetchMovies();
+
+        alert('Sucess');
+      } catch (error) {
+        console.log(error.response.data.error);
+      }
     },
-    [formData],
+    [formData, movieImage, movie?.id],
   );
 
   const handleInput = useCallback(
@@ -77,6 +108,13 @@ const ModalEditMovie = ({ movie, isOpen, setIsOpen }: ModalEditMovieProps) => {
     }
   }, []);
 
+  const handleChangeSelect = useCallback(
+    (e: ChangeEvent<HTMLSelectElement>) => {
+      handleInput(e.target.name, e.target.value);
+    },
+    [handleInput],
+  );
+
   return (
     <ModalStyles.Wrapper aria-hidden={!isOpen}>
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
@@ -95,13 +133,30 @@ const ModalEditMovie = ({ movie, isOpen, setIsOpen }: ModalEditMovieProps) => {
             onInput={handleInput}
             initialValue={formData.name}
           />
-          <TextField
-            label="Director"
-            placeholder="Director"
-            name="director"
-            initialValue={formData.director}
-            onInput={handleInput}
-          />
+
+          <SelectStyles.Wrapper>
+            <SelectStyles.Label htmlFor="director">Director</SelectStyles.Label>
+
+            <SelectStyles.SelectWrapper>
+              <SelectStyles.Select
+                id="director"
+                name="director"
+                value={formData.director}
+                onChange={handleChangeSelect}
+              >
+                <option hidden value="">
+                  Select a director
+                </option>
+                {!!options &&
+                  options.map((option) => (
+                    <option key={option.id} value={option.id}>
+                      {option.name}
+                    </option>
+                  ))}
+              </SelectStyles.Select>
+            </SelectStyles.SelectWrapper>
+          </SelectStyles.Wrapper>
+
           <S.ImageInput>
             <S.Label htmlFor="image">
               Choose a File

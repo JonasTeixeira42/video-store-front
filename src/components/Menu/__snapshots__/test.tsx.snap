@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Menu /> should render the menu 1`] = `
-.c12 {
+.c11 {
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -20,34 +20,30 @@ exports[`<Menu /> should render the menu 1`] = `
   color: #FAFAFA;
 }
 
-.c2 .{
+.c1 .{
   width: 4.5rem;
   height: 4.5rem;
 }
 
-.c2 .c3 {
+.c1 .c2 {
   font-size: 3.2rem;
   left: calc(4.5rem + 0.5rem);
   bottom: -1.2rem;
 }
 
-.c4 {
+.c3 {
   position: absolute;
 }
 
-.c5 {
+.c4 {
   display: none;
 }
 
-.c10 {
+.c9 {
   display: none;
 }
 
-.c0 .sc-jrsJCI {
-  margin-bottom: 3.2rem;
-}
-
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -64,20 +60,20 @@ exports[`<Menu /> should render the menu 1`] = `
   position: relative;
 }
 
-.c11 {
+.c10 {
   color: #FAFAFA;
   width: 2.4rem;
   height: 2.4rem;
   cursor: pointer;
 }
 
-.c7 {
+.c6 {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
 }
 
-.c9 {
+.c8 {
   position: relative;
   color: #FAFAFA;
   font-size: 1.8rem;
@@ -89,17 +85,17 @@ exports[`<Menu /> should render the menu 1`] = `
   cursor: pointer;
 }
 
-.c9:hover::after {
+.c8:hover::after {
   content: '';
   position: absolute;
   display: block;
   height: 0.3rem;
-  background: #F231A5;
+  background: #04d361;
   -webkit-animation: hoverAnimation 0.2s forwards;
   animation: hoverAnimation 0.2s forwards;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -112,7 +108,8 @@ exports[`<Menu /> should render the menu 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   background: #FAFAFA;
-  position: absolute;
+  position: fixed;
+  z-index: 10;
   top: 0;
   bottom: 0;
   left: 0;
@@ -125,7 +122,7 @@ exports[`<Menu /> should render the menu 1`] = `
   pointer-events: none;
 }
 
-.c13 > svg {
+.c12 > svg {
   position: absolute;
   top: 0;
   right: 0;
@@ -135,7 +132,7 @@ exports[`<Menu /> should render the menu 1`] = `
   height: 2.4rem;
 }
 
-.c13 .c6 {
+.c12 .c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -156,7 +153,7 @@ exports[`<Menu /> should render the menu 1`] = `
   flex: 1;
 }
 
-.c13 .c8 {
+.c12 .c7 {
   color: #030517;
   font-weight: 600;
   font-size: 2.0rem;
@@ -170,41 +167,41 @@ exports[`<Menu /> should render the menu 1`] = `
 }
 
 @media (max-width:768px) {
-  .c2 {
+  .c1 {
     height: 4.5rem;
   }
 
-  .c2 .{
+  .c1 .{
     width: 4.5rem;
     height: 4.5rem;
   }
 
-  .c2 .c3 {
+  .c1 .c2 {
     display: none;
     pointer-events: none;
   }
 }
 
 @media (min-width:768px) {
-  .c5 {
+  .c4 {
     display: block;
   }
 }
 
 @media (max-width:768px) {
-  .c10 {
+  .c9 {
     display: block;
   }
 }
 
 @media (min-width:768px) {
-  .c7 {
+  .c6 {
     margin-left: 2.4rem;
   }
 }
 
 @media (max-width:768px) {
-  .c7 {
+  .c6 {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
@@ -213,19 +210,11 @@ exports[`<Menu /> should render the menu 1`] = `
 
 <body>
   <div>
-    <div
-      aria-hidden="true"
-      class="c0"
-    />
-    <div
-      aria-hidden="true"
-      class="c0"
-    />
     <menu
-      class="c1"
+      class="c0"
     >
       <div
-        class="c2"
+        class="c1"
         color="white"
       >
         <div
@@ -252,39 +241,39 @@ exports[`<Menu /> should render the menu 1`] = `
           </svg>
         </div>
         <p
-          class="c3 c4"
+          class="c2 c3"
         >
           Locadora
         </p>
       </div>
       <div
-        class="c5"
+        class="c4"
       >
         <div
-          class="c6 c7"
+          class="c5 c6"
         >
           <div
-            class="c8 c9"
+            class="c7 c8"
           >
             Add Movie
           </div>
           <div
-            class="c8 c9"
+            class="c7 c8"
           >
             Add Director
           </div>
         </div>
       </div>
       <div
-        class="c10"
+        class="c9"
       >
         <div
-          class="c11"
+          class="c10"
         >
           <svg
             aria-hidden="true"
             aria-label="Open Menu"
-            class="c12"
+            class="c11"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -302,12 +291,12 @@ exports[`<Menu /> should render the menu 1`] = `
       </div>
       <nav
         aria-hidden="true"
-        class="c13"
+        class="c12"
       >
         <svg
           aria-hidden="true"
           aria-label="Close Menu"
-          class="c12"
+          class="c11"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"
@@ -322,15 +311,15 @@ exports[`<Menu /> should render the menu 1`] = `
           />
         </svg>
         <div
-          class="c6 c7"
+          class="c5 c6"
         >
           <div
-            class="c8 c9"
+            class="c7 c8"
           >
             Add Movie
           </div>
           <div
-            class="c8 c9"
+            class="c7 c8"
           >
             Add Director
           </div>
@@ -338,11 +327,5 @@ exports[`<Menu /> should render the menu 1`] = `
       </nav>
     </menu>
   </div>
-  <div
-    class="ReactModalPortal"
-  />
-  <div
-    class="ReactModalPortal"
-  />
 </body>
 `;

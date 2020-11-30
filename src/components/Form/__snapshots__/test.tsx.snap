@@ -53,16 +53,17 @@ exports[`<Form /> should render the form 1`] = `
   transition: background 0.3s;
 }
 
-.c5 p {
-  padding: 1.6rem;
-}
-
 .c5:hover {
   background: #026f33;
 }
 
 .c5:hover > div {
   background: #03a14a;
+}
+
+.c5 p,
+.c5 > div {
+  padding: 1.6rem;
 }
 
 .c2 {
@@ -72,7 +73,6 @@ exports[`<Form /> should render the form 1`] = `
   display: flex;
   background: #EAEAEA;
   border-radius: 0.2rem;
-  padding: 0 1.6rem;
   border: 0.2rem solid;
   border-color: #EAEAEA;
 }

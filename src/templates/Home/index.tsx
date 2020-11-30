@@ -55,21 +55,20 @@ const Home = () => {
 
   const handleEditModal = useCallback(
     (movie: Movie) => {
-      setEditingFood(movie);
       handleOpenEditModal();
+      setEditingFood(movie);
     },
     [handleOpenEditModal],
   );
 
   return (
     <>
-      {editingFood && (
-        <ModalEditMovie
-          movie={editingFood}
-          isOpen={openEditModal}
-          setIsOpen={handleOpenEditModal}
-        />
-      )}
+      <ModalEditMovie
+        movie={editingFood}
+        isOpen={openEditModal}
+        setIsOpen={handleOpenEditModal}
+        fetchMovies={fetchMovies}
+      />
 
       <S.Wrapper>
         <S.SectionMenu>

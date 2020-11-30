@@ -7,7 +7,7 @@ import MovieCard from '.';
 import movieMock from './mock';
 
 describe('<MovieCard />', () => {
-  it('should render the heading', () => {
+  it('should render the card', () => {
     const { container } = renderWithTheme(<MovieCard movie={movieMock} />);
 
     expect(
@@ -20,7 +20,7 @@ describe('<MovieCard />', () => {
 
     expect(screen.getByRole('img', { name: movieMock.name })).toHaveAttribute(
       'src',
-      movieMock.image,
+      movieMock.url,
     );
 
     const buttons = screen.getAllByRole('button');
