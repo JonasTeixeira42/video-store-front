@@ -1,6 +1,6 @@
-# Locadora Soitic
+# Locadora
 
-Esse é um projeto fron-end de uma locadora que faz parte do teste técnico da Soitic. O projeto foi desenvolvido em React e com o framework NextJS. O projeto permite que o administrador consiga administrar a locadora, desde cadastro de diretores e filmes.
+Esse é um projeto fron-end de um painel administrativo de uma locadora. O projeto foi desenvolvido em React e com o framework NextJS. O projeto permite que o administrador consiga administrar a locadora, desde cadastro de diretores e filmes.
 
 ## Tecnologias utilizadas:
 
@@ -9,14 +9,14 @@ Esse é um projeto fron-end de uma locadora que faz parte do teste técnico da S
 - Styled Components
 - Jest
 - React Testing Library
-- Storybook]
+- Storybook
 - Eslint
 - Prettier
 - Husky
 
 ## Rodar o projeto
 
-Para rodar o servidor de desenvolvimente:
+Para rodar o servidor de desenvolvimento:
 
 ```bash
 npm run dev
